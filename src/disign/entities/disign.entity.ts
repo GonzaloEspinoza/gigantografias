@@ -5,13 +5,16 @@ import {Document} from 'mongoose';
 export class Disign extends Document {
 
     @Prop()
+    idUser:string;
+
+    @Prop()
     name:string;
 
     @Prop()
     description:string;
     
     @Prop()
-    size:string;
+    size:number;
 
     @Prop()
     type:string;
@@ -27,6 +30,9 @@ export class Disign extends Document {
 
     @Prop()
     urlFile:string
+
+    @Prop()
+    state:boolean;  // true = impreso, false = falta imprimir
 }
 
 export const DisignSchema = SchemaFactory.createForClass( Disign )

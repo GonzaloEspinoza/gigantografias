@@ -2,6 +2,10 @@ import { Prop } from "@nestjs/mongoose";
 import { IsString, IsDate, IsNotEmpty } from "class-validator";
 
 export class CreateDisignDto {
+
+    @IsNotEmpty()
+    idUser:string
+
     @IsString()
     // @Prop({enum:[]})
     name:string;
@@ -10,7 +14,7 @@ export class CreateDisignDto {
     description:string;
 
     @IsString()
-    size:string;
+    size:number;
 
     @IsString()
     type:string;
@@ -25,5 +29,8 @@ export class CreateDisignDto {
     dateModified:Date;
 
     @IsNotEmpty()
-    urlFile:string
+    urlFile:string;
+
+    @IsNotEmpty()
+    state:boolean;
 }
